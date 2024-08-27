@@ -13,11 +13,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Review {
     private ObjectId id;
+    private String difficulty;
     private String body;
     private LocalDateTime created;
     private LocalDateTime updated;
-    public Review( String body, LocalDateTime created, LocalDateTime updated) {
+    public Review(String difficulty, String body, LocalDateTime created, LocalDateTime updated) {
 
+        this.difficulty = difficulty;
         this.body = body;
         this.created = created;
         this.updated = updated;

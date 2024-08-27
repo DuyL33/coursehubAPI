@@ -18,8 +18,8 @@ public class ReviewService {
 
     @Autowired
     private MongoTemplate mongoTemplate;
-    public Review createReview(String reviewBody, String number) {
-        Review review = repository.insert(new Review(reviewBody, LocalDateTime.now(), LocalDateTime.now()));
+    public Review createReview(String difficulty, String reviewBody, String number) {
+        Review review = repository.insert(new Review(difficulty, reviewBody, LocalDateTime.now(), LocalDateTime.now()));
 
         mongoTemplate.update(Course.class)
                 .matching(Criteria.where("number").is(number))
