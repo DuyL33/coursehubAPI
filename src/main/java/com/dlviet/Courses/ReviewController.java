@@ -21,7 +21,7 @@ public class ReviewController {
     @PostMapping()
     public ResponseEntity<Review> createReview(@RequestBody Map<String, String> payload) {
 
-        return new ResponseEntity<Review>(service.createReview(payload.get("difficulty") ,payload.get("body"), payload.get("number")), HttpStatus.OK);
+        return new ResponseEntity<Review>(service.createReview(payload.get("grade"),payload.get("difficulty") ,payload.get("body"), payload.get("number")), HttpStatus.OK);
     }
     @GetMapping("/{created}")
     public ResponseEntity<Optional<Review>> getSingleReview(@PathVariable LocalDateTime created){
