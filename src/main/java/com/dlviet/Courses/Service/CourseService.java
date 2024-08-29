@@ -1,5 +1,7 @@
-package com.dlviet.Courses;
+package com.dlviet.Courses.Service;
 
+import com.dlviet.Courses.Model.Course;
+import com.dlviet.Courses.Repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

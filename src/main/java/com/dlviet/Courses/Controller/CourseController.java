@@ -1,9 +1,11 @@
-package com.dlviet.Courses;
+package com.dlviet.Courses.Controller;
 
-import org.bson.types.ObjectId;
+import com.dlviet.Courses.Service.CourseService;
+import com.dlviet.Courses.Model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Comparator;
@@ -12,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/CS/Courses")
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class CourseController {
     @Autowired
     private CourseService service;
@@ -23,6 +25,7 @@ public class CourseController {
         return new ResponseEntity<>(courses, HttpStatus.OK);
     }
     @GetMapping("/{number}")
+
     public ResponseEntity<Optional<Course>> getSingleCourse(@PathVariable String number){
         return new ResponseEntity<Optional<Course>>(service.singleCourse(number), HttpStatus.OK);
     }

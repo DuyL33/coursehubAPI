@@ -1,4 +1,4 @@
-package com.dlviet.Courses;
+package com.dlviet.Courses.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

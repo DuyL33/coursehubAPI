@@ -1,4 +1,4 @@
-package com.dlviet.Courses;
+package com.dlviet.Courses.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,9 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
-import java.lang.annotation.Documented;
 import java.util.List;
-@Document(collection = "Courses")
+@Document(collection = "courses")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

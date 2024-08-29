@@ -1,4 +1,5 @@
-package com.dlviet.Courses;
+package com.dlviet.Courses.Repository;
+import com.dlviet.Courses.Model.Review;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

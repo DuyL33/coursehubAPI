@@ -1,12 +1,13 @@
-package com.dlviet.Courses;
-import org.bson.types.ObjectId;
+package com.dlviet.Courses.Controller;
+import com.dlviet.Courses.Model.Review;
+import com.dlviet.Courses.Service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -34,6 +35,7 @@ public class ReviewController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
     @DeleteMapping("/{created}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> deleteReview(@PathVariable LocalDateTime created) {
         try {
             // Call your service to delete the review
