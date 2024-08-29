@@ -70,6 +70,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/CS/auth/**").permitAll()  // Publicly accessible
                         .requestMatchers(HttpMethod.GET, "/CS/Courses/**").permitAll()  // Allow GET requests to courses
+                        .requestMatchers(HttpMethod.POST, "/CS/Courses/**").permitAll() // Allow POST requests to courses
                         .requestMatchers(HttpMethod.DELETE, "/CS/Courses/reviews/**").hasRole("ADMIN")  // Restrict DELETE requests
                         .anyRequest().authenticated());  // Any other request needs authentication
 
