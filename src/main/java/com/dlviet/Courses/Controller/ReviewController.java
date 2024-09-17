@@ -4,7 +4,6 @@ import com.dlviet.Courses.Service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -34,17 +33,7 @@ public class ReviewController {
          // Sort by ID
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
-    @DeleteMapping("/{created}")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> deleteReview(@PathVariable LocalDateTime created) {
-        try {
-            // Call your service to delete the review
-            service.deleteReview(created);
-            return new ResponseEntity<>("Review deleted successfully", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error deleting review: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+
 
 
 }
