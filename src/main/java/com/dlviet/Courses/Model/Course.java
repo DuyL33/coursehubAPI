@@ -25,9 +25,5 @@ public class Course {
     @DocumentReference
     private List<Review> review_ids;
 
-    private double avgDifficulty;
-    public List<Review> getReview_ids(){
-        return review_ids;
-    }
 
 }
