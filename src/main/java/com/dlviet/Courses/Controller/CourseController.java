@@ -28,4 +28,10 @@ public class CourseController {
     public ResponseEntity<Optional<Course>> getSingleCourse(@PathVariable String number){
         return new ResponseEntity<Optional<Course>>(service.singleCourse(number), HttpStatus.OK);
     }
+
+    @GetMapping("/{number}/avgdifficulty")
+    public ResponseEntity<Double> getAvgDifficulty(@PathVariable String number){
+        Double avgDifficulty = service.averageDifficulty(number);
+        return new ResponseEntity<Double>(avgDifficulty, HttpStatus.OK);
+    }
 }
