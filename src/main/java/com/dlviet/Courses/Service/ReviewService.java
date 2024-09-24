@@ -20,8 +20,8 @@ public class ReviewService {
 
     @Autowired
     private MongoTemplate mongoTemplate;
-    public Review createReview(String grade, String difficulty, String reviewBody, String number) {
-        Review review = repository.insert(new Review(grade, difficulty, reviewBody, LocalDateTime.now(), LocalDateTime.now()));
+    public Review createReview(String grade, String professor, String semester, String year, String difficulty, String courseWork, String reviewBody, String number) {
+        Review review = repository.insert(new Review(grade,professor, semester, year, difficulty, courseWork, reviewBody, LocalDateTime.now(), LocalDateTime.now()));
 
         mongoTemplate.update(Course.class)
                 .matching(Criteria.where("number").is(number))
@@ -41,4 +41,5 @@ public class ReviewService {
         // Delete the review from the repository
         repository.deleteReviewByCreated(created);
     }
+
 }

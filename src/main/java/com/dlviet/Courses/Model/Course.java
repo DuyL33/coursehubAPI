@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
+
+
 @Document(collection = "courses")
 @Data
 @AllArgsConstructor
