@@ -23,7 +23,7 @@ public class CourseService {
         return repository.findCourseByNumber(courseNumber);
     }
 
-    public double averageDifficulty(String courseNumber) {
+        public double averageDifficulty(String courseNumber) {
         Optional<Course> optionalCourse = singleCourse(courseNumber);
 
         return optionalCourse.map(course -> course.getReview_ids().stream()
@@ -38,5 +38,22 @@ public class CourseService {
                         .orElse(0.0))
                 .orElse(0.0);
     }
+//    public double averageDifficulty(String courseNumber) {
+//        Optional<Course> optionalCourse = repository.findCourseByNumber(courseNumber);
+//        double average = 0.0;
+//        int count = 0;
+//        System.out.println(optionalCourse);
+//        if (optionalCourse.isPresent()) {
+//            Course c = optionalCourse.get();
+//            for (Review r : c.getReview_ids()) {
+//                Double difficulty = Double.parseDouble(r.getDifficulty());
+//                average += difficulty;
+//                count++;
+//            }
+//        }
+//        if (count == 0) count++;
+//        average = average / count;
+//        return average;
+//    }
 
 }
