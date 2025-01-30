@@ -16,5 +16,11 @@ public class Role {
 
     private ERole name;
 
+    public ERole getName() {
+        return name;
+    }
 
+    public String getId() {
+        return id;
+    }
 }

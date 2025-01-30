@@ -28,4 +28,11 @@ public class Course {
     private List<Review> review_ids;
 
 
+    public List<Review> getReview_ids() {
+        return review_ids;
+    }
+
+    public int getCid() {
+        return cid;
+    }
 }

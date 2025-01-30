@@ -38,4 +38,8 @@ public class Review {
         this.updated = updated;
 
     }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
 }

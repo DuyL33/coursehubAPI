@@ -44,4 +44,23 @@ public class User {
         this.password = password;
     }
 
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Set<Role> getRoles(){
+        return this.roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public ObjectId getId() {
+        return id;
+    }
 }
